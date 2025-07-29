@@ -21,7 +21,7 @@ class LinearTopology(Topo):
         # Adding links
         self.addLink("s1", "s2")
         self.addLink("h1", "s1")
-        self.addLink("h2", "s1")
+        self.addLink("h2", "s2")
 
 
 topos = {"linear": LinearTopology}
