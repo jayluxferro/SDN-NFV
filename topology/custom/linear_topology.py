@@ -10,11 +10,18 @@ class LinearTopology(Topo):
         n: number of hosts per switch
         """
 
+        # Adding switches
+        self.addSwitch("s1")
+        self.addSwitch("s2")
+
+        # Adding hosts
+        self.addHost("h1")
+        self.addHost("h2")
+
         # Adding links
         self.addLink("s1", "s2")
         self.addLink("h1", "s1")
         self.addLink("h2", "s1")
 
-topos = {
-    'linear': LinearTopology
-}
+
+topos = {"linear": LinearTopology}
