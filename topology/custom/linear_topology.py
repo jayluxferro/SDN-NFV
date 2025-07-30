@@ -4,19 +4,19 @@ from mininet.topo import Topo
 
 
 class LinearTopology(Topo):
-    def build(self):
+    def build(self, k=2, n=2):
         """
         k: number of switches
         n: number of hosts per switch
         """
 
         # Adding switches
-        self.addSwitch("s1")
-        self.addSwitch("s2")
+        for switch in range(1, k+1):
+            self.addSwitch(f"s{switch}")
 
         # Adding hosts
-        self.addHost("h1")
-        self.addHost("h2")
+        for host in range(1, n+1):
+            self.addSwitch(f"h{host}")
 
         # Adding links
         self.addLink("s1", "s2")
