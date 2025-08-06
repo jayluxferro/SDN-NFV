@@ -21,6 +21,15 @@ curl --location 'http://localhost:9091/get-location' \
 --data-urlencode 'address=AK-484-9321'
 ```
 
+- Test sample get address for latitude and longitude
+
+```bash
+curl --location 'http://localhost:9091/get-address' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'lat=6.6500' \
+--data-urlencode 'long=-1.647"'
+```
+
 - Collect data & train
 
 ```bash
