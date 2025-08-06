@@ -8,8 +8,6 @@ kind: Deployment
 metadata:
   name: ghanapostgps-api
   namespace: ghanapostgps
-labels:
-  app: ghanapostgps-api
 spec:
   replicas: 1
   selector:
