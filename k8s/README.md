@@ -3,7 +3,7 @@
 - Deploy the API
 
 ```bash
-kubectl apply -f k8s-ghanapostgps.yaml
+kubectl apply -f ghanapostgps.yaml
 kubectl -n ghanapostgps rollout status deploy/ghanapostgps-api
 ```
 
