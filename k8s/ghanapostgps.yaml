@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ghanapostgps
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ghanapostgps-api
+  namespace: ghanapostgps
+labels:
+  app: ghanapostgps-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ghanapostgps-api
+  template:
+    metadata:
+      labels:
+        app: ghanapostgps-api
+    spec:
+      containers:
+        - name: api
+          image: jayluxferro/ghanapostgps-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9091
+              name: http
+          livenessProbe:
+            tcpSocket:
+              port: 9091
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: 9091
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ghanapostgps-api
+  namespace: ghanapostgps
+spec:
+  selector:
+    app: ghanapostgps-api
+  ports:
+    - name: http
+      port: 9091       # Service port matches container port
+      targetPort: 9091 # Pass-through to container port
+  type: ClusterIP
