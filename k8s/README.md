@@ -13,6 +13,14 @@ kubectl -n ghanapostgps rollout status deploy/ghanapostgps-api
 kubectl -n ghanapostgps port-forward deploy/ghanapostgps-api 9091:9091
 ```
 
+- Test sample get location coordinates
+
+```bash
+curl --location 'http://localhost:9091/get-location' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'address=AK-484-9321'
+```
+
 - Collect data & train
 
 ```bash
