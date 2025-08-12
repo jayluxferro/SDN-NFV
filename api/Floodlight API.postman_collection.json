@@ -115,15 +115,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/wm/core/storage/tables/json",
+					"raw": "{{base_url}}/wm/core/memory/json",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"wm",
 						"core",
-						"storage",
-						"tables",
+						"memory",
 						"json"
 					]
 				}
@@ -136,15 +135,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/wm/core/storage/tables/json",
+					"raw": "{{base_url}}/wm/core/module/loaded/json",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"wm",
 						"core",
-						"storage",
-						"tables",
+						"module",
+						"loaded",
 						"json"
 					]
 				}
@@ -178,15 +177,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/wm/core/module/all/json",
+					"raw": "{{base_url}}/wm/core/controller/switches/json",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"wm",
 						"core",
-						"module",
-						"all",
+						"controller",
+						"switches",
 						"json"
 					]
 				}
@@ -362,15 +361,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/wm/acl/rules/json",
+					"raw": "{{base_url}}/wm/core/switch/:switchId/flow/json",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"wm",
-						"acl",
-						"rules",
+						"core",
+						"switch",
+						":switchId",
+						"flow",
 						"json"
+					],
+					"variable": [
+						{
+							"key": "switchId",
+							"value": "00:00:00:00:00:00:00:01"
+						}
 					]
 				}
 			},
