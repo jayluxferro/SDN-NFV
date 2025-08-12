@@ -273,6 +273,304 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Firewall Subnet Mask",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/firewall/module/subnet-mask/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"firewall",
+						"module",
+						"subnet-mask",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Firewall Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/firewall/module/status/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"firewall",
+						"module",
+						"status",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Firewall Rules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/firewall/rules/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"firewall",
+						"rules",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACL Rules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/acl/rules/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"acl",
+						"rules",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Switch Flows",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/acl/rules/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"acl",
+						"rules",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Switch Ports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/switch/:switchId/port/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"switch",
+						":switchId",
+						"port",
+						"json"
+					],
+					"variable": [
+						{
+							"key": "switchId",
+							"value": "00:00:00:00:00:00:00:01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Switch Description",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/switch/:switchId/desc/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"switch",
+						":switchId",
+						"desc",
+						"json"
+					],
+					"variable": [
+						{
+							"key": "switchId",
+							"value": "00:00:00:00:00:00:00:01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Switch Aggregated Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/switch/:switchId/aggregate/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"switch",
+						":switchId",
+						"aggregate",
+						"json"
+					],
+					"variable": [
+						{
+							"key": "switchId",
+							"value": "00:00:00:00:00:00:00:01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Switch Group Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/switch/:switchId/group-features/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"switch",
+						":switchId",
+						"group-features",
+						"json"
+					],
+					"variable": [
+						{
+							"key": "switchId",
+							"value": "00:00:00:00:00:00:00:01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Switch Features",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/switch/:switchId/features/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"switch",
+						":switchId",
+						"features",
+						"json"
+					],
+					"variable": [
+						{
+							"key": "switchId",
+							"value": "00:00:00:00:00:00:00:01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Switch Table Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/switch/:switchId/table/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"switch",
+						":switchId",
+						"table",
+						"json"
+					],
+					"variable": [
+						{
+							"key": "switchId",
+							"value": "00:00:00:00:00:00:00:01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Switch Role",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/switch/:switchId/role/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"switch",
+						":switchId",
+						"role",
+						"json"
+					],
+					"variable": [
+						{
+							"key": "switchId",
+							"value": "00:00:00:00:00:00:00:01"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
