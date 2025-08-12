@@ -1,0 +1,307 @@
+{
+	"info": {
+		"_postman_id": "876c42d4-4c8e-4a87-8524-44920be26681",
+		"name": "Floodlight API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1492145"
+	},
+	"item": [
+		{
+			"name": "Controller Health Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/health/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"health",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Controller Role",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/role/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"role",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Controller Uptime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/system/uptime/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"system",
+						"uptime",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Controller Summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/controller/summary/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"controller",
+						"summary",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Storage Tables",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/storage/tables/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"storage",
+						"tables",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Core Memory Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/storage/tables/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"storage",
+						"tables",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Loaded Modules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/storage/tables/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"storage",
+						"tables",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Available Modules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/module/all/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"module",
+						"all",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Switches Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/module/all/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"module",
+						"all",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Switches Role",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/core/switch/all/role/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"core",
+						"switch",
+						"all",
+						"role",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Topology Internal Links",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/topology/links/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"topology",
+						"links",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Topology External Links",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/topology/external-links/json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"topology",
+						"external-links",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device Topology Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/wm/device/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"wm",
+						"device",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
