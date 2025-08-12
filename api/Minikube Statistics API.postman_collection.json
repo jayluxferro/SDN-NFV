@@ -1,0 +1,902 @@
+{
+	"info": {
+		"_postman_id": "bb7015bf-8281-493a-9c9b-a127a63006aa",
+		"name": "Minikube Statistics API",
+		"description": "A lightweight wrapper around the native Minikube/Kubernetes API\nthat provides the most frequently used statistics endpoints\n(nodes, pods, namespaces, metrics, etc.).  \nAll operations are read‑only and require the same authentication\nthat you use against the normal Kubernetes API.\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1492145"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "nodes",
+							"item": [
+								{
+									"name": "{name}",
+									"item": [
+										{
+											"name": "Get a single node",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/nodes/:name",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"nodes",
+														":name"
+													],
+													"variable": [
+														{
+															"key": "name",
+															"value": "string",
+															"description": "(Required) Node name"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/nodes/:name",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"nodes",
+																":name"
+															],
+															"variable": [
+																{
+																	"key": "name"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"metadata\": {\n    \"name\": \"string\",\n    \"namespace\": \"string\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"capacity\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    },\n    \"allocatable\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"conditions\": [\n      {\n        \"type\": \"string\",\n        \"status\": \"string\",\n        \"lastHeartbeatTime\": \"1965-10-10T13:09:19.744Z\"\n      },\n      {\n        \"type\": \"string\",\n        \"status\": \"string\",\n        \"lastHeartbeatTime\": \"2025-01-08T18:04:40.095Z\"\n      }\n    ],\n    \"nodeInfo\": {\n      \"machineID\": \"stri\",\n      \"systemUUID\": \"string\",\n      \"bootID\": \"string\",\n      \"kernelVersion\": \"\",\n      \"osImage\": \"string\",\n      \"containerRuntimeVersion\": \"string\",\n      \"kubeletVersion\": \"string\"\n    }\n  }\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "{node}",
+									"item": [
+										{
+											"name": "proxy",
+											"item": [
+												{
+													"name": "stats",
+													"item": [
+														{
+															"name": "summary",
+															"item": [
+																{
+																	"name": "Get a kubelet node summary (via proxy)",
+																	"request": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v1/nodes/:node/proxy/stats/summary",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v1",
+																				"nodes",
+																				":node",
+																				"proxy",
+																				"stats",
+																				"summary"
+																			],
+																			"variable": [
+																				{
+																					"key": "node",
+																					"value": "string",
+																					"description": "(Required) Node name"
+																				}
+																			]
+																		}
+																	},
+																	"response": [
+																		{
+																			"name": "OK",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"key": "Authorization",
+																						"value": "Bearer <token>",
+																						"description": "Added as a part of security scheme: bearer"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/v1/nodes/:node/proxy/stats/summary",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"v1",
+																						"nodes",
+																						":node",
+																						"proxy",
+																						"stats",
+																						"summary"
+																					],
+																					"variable": [
+																						{
+																							"key": "node"
+																						}
+																					]
+																				}
+																			},
+																			"status": "OK",
+																			"code": 200,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{\n  \"node\": {\n    \"nodeName\": \"string\",\n    \"startTime\": \"1987-02-12T02:16:36.242Z\",\n    \"uptimeSeconds\": 406\n  },\n  \"pod\": {\n    \"summary\": [\n      {\n        \"namespace\": \"string\",\n        \"name\": \"string\",\n        \"containerCount\": 3542,\n        \"cpuUsageNanoCores\": 4741,\n        \"memoryUsageBytes\": 5757\n      },\n      {\n        \"namespace\": \"string\",\n        \"name\": \"string\",\n        \"containerCount\": 5551,\n        \"cpuUsageNanoCores\": 3938,\n        \"memoryUsageBytes\": 96\n      }\n    ]\n  },\n  \"system\": {\n    \"disk\": {\n      \"device\": \"string\",\n      \"readBytes\": 3392,\n      \"writeBytes\": 3621\n    }\n  }\n}"
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"name": "containers",
+															"item": [
+																{
+																	"name": "Get per‑container kubelet stats for a node",
+																	"request": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v1/nodes/:node/proxy/stats/containers",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v1",
+																				"nodes",
+																				":node",
+																				"proxy",
+																				"stats",
+																				"containers"
+																			],
+																			"variable": [
+																				{
+																					"key": "node",
+																					"value": "string",
+																					"description": "(Required) Node name"
+																				}
+																			]
+																		}
+																	},
+																	"response": [
+																		{
+																			"name": "OK",
+																			"originalRequest": {
+																				"method": "GET",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "application/json"
+																					},
+																					{
+																						"key": "Authorization",
+																						"value": "Bearer <token>",
+																						"description": "Added as a part of security scheme: bearer"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/v1/nodes/:node/proxy/stats/containers",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"v1",
+																						"nodes",
+																						":node",
+																						"proxy",
+																						"stats",
+																						"containers"
+																					],
+																					"variable": [
+																						{
+																							"key": "node"
+																						}
+																					]
+																				}
+																			},
+																			"status": "OK",
+																			"code": 200,
+																			"_postman_previewlanguage": "json",
+																			"header": [
+																				{
+																					"key": "Content-Type",
+																					"value": "application/json"
+																				}
+																			],
+																			"cookie": [],
+																			"body": "{}"
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "List all nodes",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/nodes",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"nodes"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/nodes",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"nodes"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"items\": [\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\",\n          \"key_3\": \"string\",\n          \"key_4\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"status\": {\n        \"capacity\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"allocatable\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"conditions\": [\n          {\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"lastHeartbeatTime\": \"1983-08-03T21:47:03.027Z\"\n          },\n          {\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"lastHeartbeatTime\": \"2014-10-06T02:14:46.725Z\"\n          }\n        ],\n        \"nodeInfo\": {\n          \"machineID\": \"string\",\n          \"systemUUID\": \"string\",\n          \"bootID\": \"string\",\n          \"kernelVersion\": \"string\",\n          \"osImage\": \"string\",\n          \"containerRuntimeVersion\": \"string\",\n          \"kubeletVersion\": \"string\"\n        }\n      }\n    },\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"s\"\n        }\n      },\n      \"status\": {\n        \"capacity\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"allocatable\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"conditions\": [\n          {\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"lastHeartbeatTime\": \"1957-07-26T18:19:14.547Z\"\n          },\n          {\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"lastHeartbeatTime\": \"1977-06-30T06:22:31.916Z\"\n          }\n        ],\n        \"nodeInfo\": {\n          \"machineID\": \"string\",\n          \"systemUUID\": \"string\",\n          \"bootID\": \"string\",\n          \"kernelVersion\": \"string\",\n          \"osImage\": \"string\",\n          \"containerRuntimeVersion\": \"string\",\n          \"kubeletVersion\": \"string\"\n        }\n      }\n    }\n  ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "namespaces",
+							"item": [
+								{
+									"name": "{namespace}",
+									"item": [
+										{
+											"name": "pods",
+											"item": [
+												{
+													"name": "{name}",
+													"item": [
+														{
+															"name": "Get a specific pod",
+															"request": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/namespaces/:namespace/pods/:name",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"namespaces",
+																		":namespace",
+																		"pods",
+																		":name"
+																	],
+																	"variable": [
+																		{
+																			"key": "namespace",
+																			"value": "string",
+																			"description": "(Required) Namespace name"
+																		},
+																		{
+																			"key": "name",
+																			"value": "string",
+																			"description": "(Required) Pod name"
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"name": "OK",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Authorization",
+																				"value": "Bearer <token>",
+																				"description": "Added as a part of security scheme: bearer"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v1/namespaces/:namespace/pods/:name",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v1",
+																				"namespaces",
+																				":namespace",
+																				"pods",
+																				":name"
+																			],
+																			"variable": [
+																				{
+																					"key": "namespace"
+																				},
+																				{
+																					"key": "name"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"metadata\": {\n    \"name\": \"string\",\n    \"namespace\": \"string\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"status\": {\n    \"phase\": \"string\",\n    \"containerStatuses\": [\n      {\n        \"name\": \"string\",\n        \"state\": {\n          \"running\": {\n            \"startedAt\": \"2015-05-01T07:27:29.226Z\"\n          },\n          \"terminated\": {\n            \"exitCode\": 4067,\n            \"startedAt\": \"1961-09-08T13:01:56.479Z\",\n            \"finishedAt\": \"1990-12-08T06:00:52.573Z\"\n          },\n          \"waiting\": {\n            \"reason\": \"string\"\n          }\n        },\n        \"ready\": false\n      },\n      {\n        \"name\": \"string\",\n        \"state\": {\n          \"running\": {\n            \"startedAt\": \"1965-09-09T12:22:13.326Z\"\n          },\n          \"terminated\": {\n            \"exitCode\": 4958,\n            \"startedAt\": \"2023-01-27T22:14:29.493Z\",\n            \"finishedAt\": \"1979-04-18T10:37:09.917Z\"\n          },\n          \"waiting\": {\n            \"reason\": \"string\"\n          }\n        },\n        \"ready\": true\n      }\n    ]\n  }\n}"
+																}
+															]
+														}
+													]
+												},
+												{
+													"name": "List all pods in a namespace",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/namespaces/:namespace/pods",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"namespaces",
+																":namespace",
+																"pods"
+															],
+															"variable": [
+																{
+																	"key": "namespace",
+																	"value": "string",
+																	"description": "(Required) Namespace name"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/namespaces/:namespace/pods",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"namespaces",
+																		":namespace",
+																		"pods"
+																	],
+																	"variable": [
+																		{
+																			"key": "namespace"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"items\": [\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"status\": {\n        \"phase\": \"string\",\n        \"containerStatuses\": [\n          {\n            \"name\": \"string\",\n            \"state\": {\n              \"running\": {\n                \"startedAt\": \"1949-04-03T08:39:06.045Z\"\n              },\n              \"terminated\": {\n                \"exitCode\": 7129,\n                \"startedAt\": \"2001-02-11T06:38:49.890Z\",\n                \"finishedAt\": \"2014-08-20T08:14:28.153Z\"\n              },\n              \"waiting\": {\n                \"reason\": \"string\"\n              }\n            },\n            \"ready\": false\n          },\n          {\n            \"name\": \"string\",\n            \"state\": {\n              \"running\": {\n                \"startedAt\": \"1977-06-14T19:42:31.289Z\"\n              },\n              \"terminated\": {\n                \"exitCode\": 2546,\n                \"startedAt\": \"2016-06-20T16:30:39.223Z\",\n                \"finishedAt\": \"2011-01-27T18:59:51.234Z\"\n              },\n              \"waiting\": {\n                \"reason\": \"string\"\n              }\n            },\n            \"ready\": false\n          }\n        ]\n      }\n    },\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\",\n          \"key_3\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"status\": {\n        \"phase\": \"string\",\n        \"containerStatuses\": [\n          {\n            \"name\": \"string\",\n            \"state\": {\n              \"running\": {\n                \"startedAt\": \"1947-08-31T12:14:35.990Z\"\n              },\n              \"terminated\": {\n                \"exitCode\": 3488,\n                \"startedAt\": \"1961-08-05T22:15:42.349Z\",\n                \"finishedAt\": \"1969-12-19T23:46:41.112Z\"\n              },\n              \"waiting\": {\n                \"reason\": \"string\"\n              }\n            },\n            \"ready\": true\n          },\n          {\n            \"name\": \"string\",\n            \"state\": {\n              \"running\": {\n                \"startedAt\": \"2005-09-18T02:43:43.173Z\"\n              },\n              \"terminated\": {\n                \"exitCode\": 9756,\n                \"startedAt\": \"2001-05-16T04:32:42.097Z\",\n                \"finishedAt\": \"2000-03-29T22:51:02.912Z\"\n              },\n              \"waiting\": {\n                \"reason\": \"string\"\n              }\n            },\n            \"ready\": true\n          }\n        ]\n      }\n    }\n  ]\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "List all namespaces",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/namespaces",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"namespaces"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/namespaces",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"namespaces"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"items\": [\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\"\n        }\n      }\n    },\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"strin\",\n          \"key_2\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        }\n      }\n    }\n  ]\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "apis",
+			"item": [
+				{
+					"name": "metrics.k8s.io",
+					"item": [
+						{
+							"name": "v1beta1",
+							"item": [
+								{
+									"name": "nodes",
+									"item": [
+										{
+											"name": "List node metrics",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/apis/metrics.k8s.io/v1beta1/nodes",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"apis",
+														"metrics.k8s.io",
+														"v1beta1",
+														"nodes"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/apis/metrics.k8s.io/v1beta1/nodes",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"apis",
+																"metrics.k8s.io",
+																"v1beta1",
+																"nodes"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"items\": [\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        }\n      },\n      \"timestamp\": \"1976-04-25T13:55:43.563Z\",\n      \"window\": \"string\",\n      \"cpu\": \"string\",\n      \"memory\": \"string\"\n    },\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"timestamp\": \"1976-01-24T11:18:20.239Z\",\n      \"window\": \"string\",\n      \"cpu\": \"string\",\n      \"memory\": \"string\"\n    }\n  ]\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "pods",
+									"item": [
+										{
+											"name": "List all pod metrics",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/apis/metrics.k8s.io/v1beta1/pods",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"apis",
+														"metrics.k8s.io",
+														"v1beta1",
+														"pods"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/apis/metrics.k8s.io/v1beta1/pods",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"apis",
+																"metrics.k8s.io",
+																"v1beta1",
+																"pods"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"items\": [\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"timestamp\": \"1975-07-23T23:22:06.198Z\",\n      \"window\": \"string\",\n      \"containers\": [\n        {\n          \"name\": \"string\",\n          \"usage\": {\n            \"cpu\": \"string\",\n            \"memory\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"usage\": {\n            \"cpu\": \"string\",\n            \"memory\": \"string\"\n          }\n        }\n      ]\n    },\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"timestamp\": \"1952-03-03T19:26:44.668Z\",\n      \"window\": \"string\",\n      \"containers\": [\n        {\n          \"name\": \"string\",\n          \"usage\": {\n            \"cpu\": \"string\",\n            \"memory\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"usage\": {\n            \"cpu\": \"string\",\n            \"memory\": \"string\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "namespaces",
+									"item": [
+										{
+											"name": "{namespace}",
+											"item": [
+												{
+													"name": "pods",
+													"item": [
+														{
+															"name": "List pod metrics for a namespace",
+															"request": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/apis/metrics.k8s.io/v1beta1/namespaces/:namespace/pods",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"apis",
+																		"metrics.k8s.io",
+																		"v1beta1",
+																		"namespaces",
+																		":namespace",
+																		"pods"
+																	],
+																	"variable": [
+																		{
+																			"key": "namespace",
+																			"value": "default",
+																			"description": "(Required) Namespace name"
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"name": "OK",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Authorization",
+																				"value": "Bearer <token>",
+																				"description": "Added as a part of security scheme: bearer"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/apis/metrics.k8s.io/v1beta1/namespaces/:namespace/pods",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"apis",
+																				"metrics.k8s.io",
+																				"v1beta1",
+																				"namespaces",
+																				":namespace",
+																				"pods"
+																			],
+																			"variable": [
+																				{
+																					"key": "namespace"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"items\": [\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"timestamp\": \"1975-07-23T23:22:06.198Z\",\n      \"window\": \"string\",\n      \"containers\": [\n        {\n          \"name\": \"string\",\n          \"usage\": {\n            \"cpu\": \"string\",\n            \"memory\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"usage\": {\n            \"cpu\": \"string\",\n            \"memory\": \"string\"\n          }\n        }\n      ]\n    },\n    {\n      \"metadata\": {\n        \"name\": \"string\",\n        \"namespace\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"timestamp\": \"1952-03-03T19:26:44.668Z\",\n      \"window\": \"string\",\n      \"containers\": [\n        {\n          \"name\": \"string\",\n          \"usage\": {\n            \"cpu\": \"string\",\n            \"memory\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"usage\": {\n            \"cpu\": \"string\",\n            \"memory\": \"string\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://127.0.0.1:8443"
+		}
+	]
+}
